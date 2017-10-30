@@ -36,7 +36,7 @@ Lambda functions can be invoked either Asynchronously or Synchronously. To invok
 aws lambda invoke --function-name xrayPyTest --invocation-type Event out.txt
 ```
 
-![Async Cold start](media/Async cold.PNG)
+![Async Cold start](media/Async-cold.png)
 
 To invoke your function in Sync, remove the --invoication-type flag, it will default to RequestResponse
 
@@ -44,6 +44,6 @@ To invoke your function in Sync, remove the --invoication-type flag, it will def
 aws lambda invoke --function-name xrayPyTest  out.txt
 ```
 
-![Sync Cold start](media/Async cold.PNG)
+![Sync Cold start](media/Sync-cold.png)
 
 ## Resources
