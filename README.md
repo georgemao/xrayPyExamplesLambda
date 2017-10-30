@@ -30,14 +30,15 @@ xray_recorder.end_subsegment()
 ```
 ## Testing
 
-Lambda functions can be invoked either Asynchronously or Synchronously. To invoke your Lambda function in Async specify the --invocation-type flag Event:
+Lambda functions can be invoked either Asynchronously or Synchronously. To invoke your Lambda function in Async mode specify the --invocation-type flag Event:
 
 ```bash
 aws lambda invoke --function-name xrayPyTest --invocation-type Event out.txt
 ```
-
+This X-Ray Trace shows a Lambda function running in Async mode for the first time, with a Cold Start. Notice the Dwell time under AWS::Lambda and the overall duration was just under 800ms.
 ![Async Cold start](media/Async-cold.png)
 
+This X-Ray Trace shows a Lambda function runnning when Warm. Notice the overall duration was under 350ms.
 ![Async Cold start](media/Async-warm.png)
 
 To invoke your function in Sync, remove the --invoication-type flag, it will default to RequestResponse
@@ -46,9 +47,10 @@ To invoke your function in Sync, remove the --invoication-type flag, it will def
 aws lambda invoke --function-name xrayPyTest  out.txt
 ```
 
+This X-Ray trace shows a Lambda function running in Sync mode for the first time, with a Cold Start. Notice the Initialization record under AWS::Lambda::Function and overall function duration of 1.3s.
 ![Sync Cold start](media/Sync-cold.png)
 
-
+This X-Ray trace shows a Lambda function running when Warm. Notice there is no Initialization and the function runs under 550ms.
 ![Sync Warm start](media/Sync-warm.png)
 
 ## Resources
