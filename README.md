@@ -54,3 +54,5 @@ This X-Ray trace shows a Lambda function running when Warm. Notice there is no I
 ![Sync Warm start](media/Sync-warm.png)
 
 ## Resources
+
+- **xrayPyTest** - Python example that demostrates how to instrument code with the X-Ray SDK.
