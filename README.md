@@ -32,6 +32,8 @@ xray_recorder.end_subsegment()
 
 Lambda functions can be invoked either Asynchronously or Synchronously. To invoke your Lambda function in Async mode specify the --invocation-type flag Event:
 
+### Async Test
+
 ```bash
 aws lambda invoke --function-name xrayPyTest --invocation-type Event out.txt
 ```
@@ -40,6 +42,8 @@ This X-Ray Trace shows a Lambda function running in *Async* mode for the first t
 
 This X-Ray Trace shows a Lambda function runnning when *Warm*. Notice the overall duration was under 250ms.
 ![Async Cold start](media/Async-warm.png)
+
+### Sync Test
 
 To invoke your function in Sync, remove the --invoication-type flag, it will default to RequestResponse
 
