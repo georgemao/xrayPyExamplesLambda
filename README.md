@@ -38,6 +38,8 @@ aws lambda invoke --function-name xrayPyTest --invocation-type Event out.txt
 
 ![Async Cold start](media/Async-cold.png)
 
+![Async Cold start](media/Async-warm.png)
+
 To invoke your function in Sync, remove the --invoication-type flag, it will default to RequestResponse
 
 ```bash
@@ -45,5 +47,8 @@ aws lambda invoke --function-name xrayPyTest  out.txt
 ```
 
 ![Sync Cold start](media/Sync-cold.png)
+
+
+![Sync Warm start](media/Sync-warm.png)
 
 ## Resources
