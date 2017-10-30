@@ -5,7 +5,7 @@ This example demostrates how to use the AWS [X-Ray SDK] (http://docs.aws.amazon.
 
 ## Introduction
 
-First, add two directives to your Python file
+First, add two directives to your Python source code
 
 ```python
 from aws_xray_sdk.core import xray_recorder
@@ -23,7 +23,9 @@ Third, wrap sections of your code in subsegements like this:
 
 ```python
 subsegment = xray_recorder.begin_subsegment('subsegment_name')
+
 # code here...
+
 xray_recorder.end_subsegment()
 ```
 ## Testing
@@ -34,13 +36,14 @@ Lambda functions can be invoked either Asynchronously or Synchronously. To invok
 aws lambda invoke --function-name xrayPyTest --invocation-type Event out.txt
 ```
 
-![Async Cold start](media/Async cold.png)
+![Async Cold start](media/Async cold.PNG)
 
 To invoke your function in Sync, remove the --invoication-type flag, it will default to RequestResponse
 
 ```bash
 aws lambda invoke --function-name xrayPyTest  out.txt
 ```
-![Sync Cold start](media/Async cold.png)
+
+![Sync Cold start](media/Async cold.PNG)
 
 ## Resources
